@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>这是一个bi系统</p>
+    <button onclick="handleClick()">点击</button>
+    <p>hello</p>
+    <button onclick="handleClick()">点击2</button>
+  </div>
+  <canvas id="canvas" height="100" width="100"></canvas>
+  <canvas id="canvas2" height="200" width="200"></canvas>
+  <script>
+  
+    // 点击事件
+    function handleClick() {
+      console.log('hello')
+    }
+
+    /**
+     * 添加水印
+     * 需求，根据传入的参数生成水印，参数可能是文本或者是图片
+    */
+   class WaterMark {
+    constructor(str) {
+      this.str = str
+      this.elId = Symbol('watermark').toString()
+      this.fun = () => {}
+      this.setWaterMark()
+    }
+
+     createWaterMark(){
+      // 防止重复创建
+      if(this.markEle){
+        document.documentElement.removeChild(this.markEle)
+      }
+      // 创建水印
+      const canvasEle = document.createElement('canvas')
+      canvasEle.height = 200
+      canvasEle.width = 200
+      const canvasPlm = canvasEle.getContext('2d')
+      canvasPlm.font = '20px 微软雅黑'
+      canvasPlm.fillStyle = 'red'
+      canvasPlm.rotate(-20 * Math.PI / 180)
+      canvasPlm.fillText(this.str, 30, 140)
+      canvasPlm.textAlign = 'center'
+      const imgUrl = canvasEle.toDataURL('image/png')
+
+      // 应用水印
+      this.markEle = document.createElement('div')
+      this.markEle.id = this.elId
+      this.markEle.style.cssText = `
+        width: ${document.documentElement.clientWidth}px;
+        height: ${document.documentElement.clientHeight}px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        pointer-events: none;
+        background: url('${imgUrl}') repeat center center
+      `
+      document.documentElement.appendChild(this.markEle)
+    }
+
+    // 设置水印
+     setWaterMark() {
+      this.createWaterMark(this.str)
+      this.fun = () => this.createWaterMark(this.str)
+      window.addEventListener('resize', this.fun)
+    }
+    
+    // 清除水印以及绑定的事件
+     clearWaterMark() {
+      if(this.markEle){
+        document.documentElement.removeChild(this.markEle)
+      }
+      window.removeEventListener('resize', this.fun)
+    }
+    
+   }
+
+
+   window.onload = () => {
+    const instance = new WaterMark('hello')
+   }
+   
+
+
+    // const canvasEl = document.getElementById('canvas')
+    // const canvasIns = canvasEl.getContext('2d')
+
+    // canvasIns.fillStyle = 'red'
+    // canvasIns.fillRect(10,10, 50, 50)
+
+    // canvasIns.strokeStyle = 'blue'
+    // canvasIns.strokeRect(9,9, 51, 51)
+
+    // // 画心
+
+    // const canvasEl2 = document.getElementById('canvas2')
+    // const canvasIns2 = canvasEl2.getContext('2d')
+    
+    // canvasIns2.beginPath()
+    // canvasIns2.moveTo(10,10)
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<mxfile host="65bd71144e">
+    <diagram id="FWjdAnP9iPzyGBBMjbTf" name="第 1 页">
+        <mxGraphModel dx="745" dy="875" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="30" value="react" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="220" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="react reconclier" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="220" width="500" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="react-dom" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="220" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="将jsx转换成一个对象， 虚拟dom" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="36" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="begin Work" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="191" y="300" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="diff, 遍历Fiber树" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="191" y="410" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="39" target="40">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="complate work" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="351" y="300" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="对比dom 创建effect" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="351" y="410" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="42" target="43">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="commit work" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="521" y="300" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="43" target="45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="接收effect 执行对应的更新" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="521" y="410" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="45" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="createElement&amp;nbsp; setAttrbute" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="410" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="递" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="221" y="455" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="归" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="391" y="455" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="181" y="285" width="329" height="265" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="render" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="500" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
